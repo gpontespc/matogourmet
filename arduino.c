@@ -67,7 +67,7 @@ void loop() {
   lcd.setCursor(0, 0);
   lcd.print("Umidade solo");
   lcd.setCursor(0, 1);
-  lcd.print("Solo: " + String(umidade_solo) + "%");
+  lcd.print(String(umidade_solo) + "%");
   delay(5000);
   lcd.clear();
 
