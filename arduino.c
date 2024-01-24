@@ -56,6 +56,7 @@ void loop() {
   umidade_solo = map(umidade_solo, analogSoloMolhado, analogSoloSeco, percSoloMolhado, percSoloSeco);
 
   int nivel_agua = analogRead(WATERPIN);
+  int porcentagem_nivel_agua = map(nivel_agua, 0, 613, 0, 100);
 
   lcd.setCursor(0, 0);
   lcd.print("Umidade & Temp");
@@ -65,7 +66,7 @@ void loop() {
   lcd.clear();
 
   lcd.setCursor(0, 0);
-  lcd.print("Umidade solo");
+  lcd.print("Umidade do solo");
   lcd.setCursor(0, 1);
   lcd.print(String(umidade_solo) + "%");
   delay(5000);
@@ -74,7 +75,7 @@ void loop() {
   lcd.setCursor(0, 0);
   lcd.print("Nivel de agua");
   lcd.setCursor(0, 1);
-  lcd.print(String(nivel_agua));
+  lcd.print(String(porcentagem_nivel_agua) + "%");
   delay(5000);
   lcd.clear();
 
